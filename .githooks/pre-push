@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Before each push: everything, including the shared spec through the Swift bindings.
+# Skip once with `git push --no-verify`.
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+echo "▸ MawaKit: full test suite (Rust + Swift bindings)…"
+make --no-print-directory test

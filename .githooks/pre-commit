@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Before each commit that touches the crate: formatting, clippy, and the Rust tests
+# (shared spec + work budgets). Skip once with `git commit --no-verify`.
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+git diff --cached --quiet -- src tests spec Cargo.toml && exit 0
+echo "▸ MawaKit: lint + Rust tests…"
+make --no-print-directory lint test-rust

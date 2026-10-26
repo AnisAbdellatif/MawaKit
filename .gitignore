@@ -1,0 +1,7 @@
+/target
+/.build
+/.swiftpm
+.DS_Store
+# Built by `make swift`
+/bindings/swift/MawaKitFFI.xcframework
+/bindings/swift/Sources/MawaKit/MawaKit.swift

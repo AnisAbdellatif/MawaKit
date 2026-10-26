@@ -1,0 +1,5 @@
+# Names of the generated Swift module and its C companion module.
+[bindings.swift]
+module_name = "MawaKit"
+ffi_module_name = "MawaKitFFI"
+ffi_module_filename = "MawaKitFFI"
