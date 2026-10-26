@@ -72,8 +72,12 @@ make hooks      # lint + Rust tests before commits, everything before pushes
 
 ## Status
 
-Private, version 0.x: the API may still change. Before publishing:
+Version 0.x: the API may still change. The source is public, but the crate isn't on crates.io yet. Before publishing
+it there:
 - agree the data use (and the name) with Mawaqit,
 - settle the API,
-- choose a license,
 - set up CI on macOS, Linux and Windows.
+
+## License
+
+[MIT](LICENSE). Prayer times are provided by MAWAQIT; this project isn't affiliated with MAWAQIT.

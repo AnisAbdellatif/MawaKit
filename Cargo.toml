@@ -4,10 +4,11 @@ version = "0.1.0"
 edition = "2024"
 rust-version = "1.85"
 description = "Prayer-time logic for mosque timetables: daily schedules, iqama rules, Jumu'a, countdowns and notification events, with a Mawaqit adapter."
+license = "MIT"
 readme = "README.md"
 keywords = ["prayer-times", "salat", "islam", "mosque", "mawaqit"]
 categories = ["date-and-time"]
-# Private until the API settles and Mawaqit has agreed to the data use.
+# Not on crates.io until the API settles and Mawaqit has agreed to the data use.
 publish = false
 
 [lib]
