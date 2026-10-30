@@ -14,4 +14,10 @@ pub enum MawaKitError {
         /// What was wrong.
         reason: String,
     },
+    /// The mosque search response isn't a list of mosques.
+    #[error("invalid mosque search response: {reason}")]
+    InvalidSearchResponse {
+        /// What was wrong.
+        reason: String,
+    },
 }

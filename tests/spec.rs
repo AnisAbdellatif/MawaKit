@@ -251,6 +251,7 @@ fn page_extraction() {
             Err(Error::ConfDataNotFound) => json!({ "error": "notFound" }),
             Err(Error::ConfDataUnterminated) => json!({ "error": "unterminated" }),
             Err(Error::InvalidConfiguration { .. }) => json!({ "error": "invalid" }),
+            Err(Error::InvalidSearchResponse { .. }) => unreachable!("from_page never searches"),
         };
         report.check(|| format!("from_page({html:?})"), &entry["result"], &actual);
     }

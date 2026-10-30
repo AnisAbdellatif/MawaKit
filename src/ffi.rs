@@ -46,6 +46,30 @@ pub fn mosque_slug(input: String) -> Option<String> {
     mawaqit::mosque_slug(&input)
 }
 
+/// Mosque search results from a response body; see [`mawaqit::MosqueSearchRequest`].
+#[uniffi::export]
+pub fn parse_mosque_search_results(
+    body: String,
+) -> Result<Vec<mawaqit::MosqueSearchResult>, Error> {
+    mawaqit::parse_search_results(&body)
+}
+
+/// The request that searches mosques by name or place.
+#[uniffi::export]
+pub fn mosque_search_by_name_request(word: String, token: String) -> mawaqit::MosqueSearchRequest {
+    mawaqit::MosqueSearchRequest::by_name(&word, &token)
+}
+
+/// The request that searches mosques near a location.
+#[uniffi::export]
+pub fn mosque_search_nearby_request(
+    latitude: f64,
+    longitude: f64,
+    token: String,
+) -> mawaqit::MosqueSearchRequest {
+    mawaqit::MosqueSearchRequest::nearby(latitude, longitude, &token)
+}
+
 /// The public Mawaqit page of a mosque.
 #[uniffi::export]
 pub fn mawaqit_page_url(slug: String) -> String {

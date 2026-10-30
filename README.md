@@ -11,7 +11,8 @@ Prayer-time logic for mosque timetables, written once in Rust and used from any 
 - **Notification events:** upcoming adhan and iqama moments.
 - **Countdown text:** `1h 23m` / `1:23:45`, plus how long the text stays valid, so displays sleep instead of polling.
 - **[Mawaqit](https://mawaqit.net) adapter:** extracts a mosque's configuration from its public page, and turns
-  pasted links into mosque slugs.
+  pasted links into mosque slugs. Mosque search (by name or location) is included: `MosqueSearchRequest` says what
+  to send, `parse_search_results` reads the response. The search API needs a Mawaqit API access token.
 
 Calendar times are read in the mosque's time zone (via [`jiff`](https://docs.rs/jiff)), so daylight-saving changes
 are handled.
